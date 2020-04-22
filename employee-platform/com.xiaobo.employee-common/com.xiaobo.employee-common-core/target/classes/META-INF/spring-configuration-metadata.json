@@ -1,0 +1,28 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.xiaobo.common.utils.JwtUtils",
+      "name": "tr.jwt",
+      "type": "com.xiaobo.common.utils.JwtUtils"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.xiaobo.common.utils.JwtUtils",
+      "defaultValue": 0,
+      "name": "tr.jwt.expire",
+      "type": "java.lang.Long"
+    },
+    {
+      "sourceType": "com.xiaobo.common.utils.JwtUtils",
+      "name": "tr.jwt.header",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.xiaobo.common.utils.JwtUtils",
+      "name": "tr.jwt.secret",
+      "type": "java.lang.String"
+    }
+  ]
+}
