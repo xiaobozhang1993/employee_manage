@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>员工信息管理系统</title>
+    <% if (htmlWebpackPlugin.options.nodeModules) { %>
+      <!-- Add `node_modules/` to global paths so `require` works properly in development -->
+      <script>
+        require('module').globalPaths.push('<%= htmlWebpackPlugin.options.nodeModules.replace(/\\/g, '\\\\') %>')
+      </script>
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- Set `__static` path to static files in production -->
+    <% if (!process.browser) { %>
+      <script>
+        if (process.env.NODE_ENV !== 'development'){
+          window.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\');
+        (function () {
+          window.SITE_CONFIG = {};
+          // api接口请求地址
+          window.SITE_CONFIG['baseUrl'] = 'http://129.211.23.185:8081/employee-admin'
+          // cdn地址 = 域名 + 版本号
+          window.SITE_CONFIG['domain']  = './'; // 域名
+          window.SITE_CONFIG['version'] = '';   // 版本号(年月日时分)
+          window.SITE_CONFIG['cdnUrl']  = window.SITE_CONFIG.domain + window.SITE_CONFIG.version;
+        })();
+        }else{
+          (function () {
+          window.SITE_CONFIG = {};
+          // api接口请求地址
+          window.SITE_CONFIG['baseUrl'] = 'http://localhost:8081/employee-admin'
+          // cdn地址 = 域名 + 版本号
+          window.SITE_CONFIG['domain']  = './'; // 域名
+          window.SITE_CONFIG['version'] = '';   // 版本号(年月日时分)
+          window.SITE_CONFIG['cdnUrl']  = window.SITE_CONFIG.domain + window.SITE_CONFIG.version;
+        })();
+        }
+      </script>
+    <% } %>
+    <!-- webpack builds are automatically injected -->
+  </body>
+</html>
