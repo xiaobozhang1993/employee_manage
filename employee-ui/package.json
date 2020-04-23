@@ -171,7 +171,7 @@
     "vue-template-compiler": "2.5.17",
     "vue2-editor": "^2.10.2",
     "webpack": "^3.5.2",
-    "webpack-dev-server": "^2.7.1",
+    "webpack-dev-server": "^3.1.11",
     "webpack-hot-middleware": "^2.18.2"
   }
 }
